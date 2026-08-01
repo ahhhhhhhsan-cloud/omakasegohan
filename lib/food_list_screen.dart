@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:omakase_gohan/calendar_screen.dart';
+import 'package:omakase_gohan/food_recipe_screen.dart';
 import 'food_repository.dart';
 import 'food_item.dart';
 import 'app_navigation_bar.dart';
@@ -254,6 +256,16 @@ class _FoodListScreenState extends State<FoodListScreen> {
         onDestinationSelected: (index) {
           if (index == 0) {
             Navigator.popUntil(context, (route) => route.isFirst);
+          } else if (index == 1) {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const RecipeScreen()),
+            );
+          } else if (index == 2) {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const CalendarScreen()),
+            );
           }
         },
       ),

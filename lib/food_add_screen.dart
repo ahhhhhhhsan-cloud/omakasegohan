@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:omakase_gohan/calendar_screen.dart';
+import 'package:omakase_gohan/food_recipe_screen.dart';
 import 'utils/date_picker_helper.dart';
 import 'app_navigation_bar.dart';
 import 'home_screen.dart';
@@ -412,6 +414,16 @@ class _FoodAddScreenState extends State<FoodAddScreen> {
         onDestinationSelected: (index) {
           if (index == 0) {
             Navigator.popUntil(context, (route) => route.isFirst);
+          } else if (index == 1) {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const RecipeScreen()),
+            );
+          } else if (index == 2) {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const CalendarScreen()),
+            );
           }
         },
       ),

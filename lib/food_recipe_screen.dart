@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
+import 'package:omakase_gohan/calendar_screen.dart';
 import 'app_colors.dart';
 import 'app_navigation_bar.dart';
 import 'food_repository.dart';
@@ -195,6 +196,11 @@ class _RecipeScreenState extends State<RecipeScreen> {
         onDestinationSelected: (index) {
           if (index == 0) {
             Navigator.popUntil(context, (route) => route.isFirst);
+          } else if (index == 2) {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const CalendarScreen()),
+            );
           }
         },
       ),

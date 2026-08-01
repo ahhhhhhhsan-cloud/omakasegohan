@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:omakase_gohan/food_recipe_screen.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'app_colors.dart';
 import 'food_repository.dart';
@@ -117,6 +118,11 @@ class _CalendarScreenState extends State<CalendarScreen> {
         onDestinationSelected: (index) {
           if (index == 0) {
             Navigator.popUntil(context, (route) => route.isFirst);
+          } else if (index == 1) {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const RecipeScreen()),
+            );
           }
         },
       ),
