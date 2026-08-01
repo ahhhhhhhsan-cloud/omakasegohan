@@ -1,17 +1,29 @@
-# test2
+# おまかせごはん
 
-A new Flutter project.
+冷蔵庫の中身を細かく把握していなくても、AIが今ある食材から作れるレシピを提案してくれる食材管理アプリです。
 
-## Getting Started
+## 主な機能
 
-This project is a starting point for a Flutter application.
+- 食材の登録・一覧管理（賞味期限つき）
+- ホーム画面で賞味期限が近い食材をひと目で確認
+- Gemini APIを使ったAIレシピ提案（選んだ食材から自動でレシピを考えてもらえる）
+- カレンダーで食材の期限を月単位で確認
+- 直前に提案されたレシピをホーム画面に自動保存・表示
 
-A few resources to get you started if this is your first Flutter project:
+## 使用技術
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+- Flutter / Dart
+- Hive（ローカルデータ保存）
+- table_calendar
+- Google Gemini API（レシピ生成）
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 実行方法
+
+このリポジトリにはAPIキーは含まれていません。AIレシピ提案機能を使うには、ご自身のGemini APIキーを取得し、以下のコマンドで実行してください。
+
+\`\`\`
+flutter pub get
+flutter run --dart-define=GEMINI_API_KEY=あなたのAPIキー
+\`\`\`
+
+APIキーを指定しない場合も、レシピ提案機能以外は問題なく動作します。
